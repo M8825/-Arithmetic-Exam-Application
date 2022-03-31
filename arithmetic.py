@@ -1,17 +1,16 @@
-# write your code here
-usr_inp = input().split()
+from random import randint, choice
+random_x, random_y = randint(2, 9), randint(2, 9)
+operator = choice(['+', '-', '*'])
 
-if '+' in usr_inp:
-    x = int(usr_inp[0])
-    y = int(usr_inp[2])
-    print(x + y)
-elif '*' in usr_inp:
-    x = int(usr_inp[0])
-    y = int(usr_inp[2])
-    print(x * y)
+print(random_x, operator, random_y)
 
-elif '-' in usr_inp:
-    x = int(usr_inp[0])
-    y = int(usr_inp[2])
-    print(x - y)
 
+if operator == '+':
+    result = random_x + random_y
+elif operator == '-':
+    result = random_x - random_y
+elif operator == '*':
+    result = random_x * random_y
+
+
+print('Right!' if result == int(input()) else 'Wrong!')
